@@ -2,7 +2,6 @@
 #include <math.h>
 #include <sys/types.h>
 #include <stdlib.h>
-#include <time.h>
 #include <R.h>
 
 #define MAXN 200000
@@ -51,7 +50,7 @@ int allZero;
 unsigned long *lvector(long nl, long nh)
 /* allocate a long int vector with subscript range v[nl..nh] */
 {
-    long *v = (long *)malloc((size_t)((nh-nl+2) * sizeof(long)));
+    unsigned long *v = (unsigned long *)malloc((size_t)((nh-nl+2) * sizeof(long)));
     if (v == NULL) error("allocation failure in lvector()");
     return (v-nl+1);
 }
@@ -181,10 +180,17 @@ double sign(double x){
 double func(double *x, double *y,  double tau, double *tTilda, double *A,  double 
 sum_right, double sumxij, double sumabsxij, int j, int pp, int nn){
   int i,m;
-  double xj[MAXN], yj[MAXN], z[MAXN], wt[MAXN],wtsum;
+/*  double xj[nn+1], yj[nn+1], z[nn+1], wt[nn+1], wtsum;*/
+  /*double  wt[nn+1];*/
+  double *xj, *yj, *z, *wt, wtsum;
   unsigned long mm;
   double taustar, pwtsum, ans, large;
   
+  xj=(double *) calloc(nn+1, sizeof(double));
+  yj=(double *) calloc(nn+1, sizeof(double));  
+  z=(double *) calloc(nn+2, sizeof(double));  
+  wt=(double *) calloc(nn+2, sizeof(double));
+
   for(i=0;i<nn;i++){
     yj[i]=y[i];
     xj[i]=x[i*pp+j];
@@ -236,6 +242,11 @@ sum_right, double sumxij, double sumabsxij, int j, int pp, int nn){
   
   /*printf("q=%f sumabsxij=%f  fabs(xj[nn])=%f taustar=%f\n", ans, sumabsxij, fabs(xj[nn]), taustar);*/
 
+  /*free(xj); 
+  free(yj);
+  free(z);
+  free(wt);*/
+
   return ans;
 
 }
@@ -250,7 +261,6 @@ void rqmcmb(double *x, double *y,  double *tau, double *theta_tilda, double *A, 
   
   int i, j, jj, k, nn, pp;
   double sum, s[MAXP],tau2, tTilda[MAXP];
-  long t1;
   int rand_ind;
   extern int allZero;
   
@@ -266,8 +276,6 @@ void rqmcmb(double *x, double *y,  double *tau, double *theta_tilda, double *A, 
     tTilda[i]=theta_tilda[i];
   }
   
-  /*time(&t1);
-    srand(seed[0]);*/
   success[0]=1;  
   
   for(k=0;k<*MAXK; k++){
@@ -300,6 +308,23 @@ void rqmcmb(double *x, double *y,  double *tau, double *theta_tilda, double *A, 
   }
   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
