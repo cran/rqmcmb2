@@ -1,0 +1,4 @@
+rqmcmb          Implements the MCMB-A method for quantile regression
+rqmcmb.ci       Computes the mean, SD and confidence intervals from an MCMB sequence
+rqmcmb.plot     Plots the MCMB chains, with a dotted line at theta_0 (from rq())  and the 95% CI based on
+                the MCMB estimate of the standard error and centerd at theta_0.
