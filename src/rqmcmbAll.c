@@ -242,10 +242,10 @@ sum_right, double sumxij, double sumabsxij, int j, int pp, int nn){
   
   /*printf("q=%f sumabsxij=%f  fabs(xj[nn])=%f taustar=%f\n", ans, sumabsxij, fabs(xj[nn]), taustar);*/
 
-  /*free(xj); 
+  free(xj); 
   free(yj);
   free(z);
-  free(wt);*/
+  free(wt);
 
   return ans;
 
