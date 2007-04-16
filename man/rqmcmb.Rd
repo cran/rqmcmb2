@@ -41,12 +41,16 @@ indicates that the program fails to return a desired MCMB sequence}
 
 
 \references{
-Kocherginsky, M. (2003). Extensions of Markov
+Kocherginsky, M., He, X.  Extensions of the Markov Chain Marginal 
+Bootstrap.  Statistics & Probability Letters, in press. 
+
+Kocherginsky M, He X, Mu Y. (2005). Practical confidence intervals 
+for regression quantiles.  Journal of Computational and Graphical 
+Statistics 14:41-55, 2005.
+
+Kocherginsky, M. (2003). Extensions of the Markov
 Chain Marginal Bootstrap. Ph.D Thesis, University of Illinois
 Urbana-Champaign.
- 
-Kocherginsky, M., He, X. and Mu, Y. (2003).
-Practical Confidence Intervals for Regression Quantiles. Preprint.
 
 He, X. and Hu, F. (2002). Markov Chain Marginal Bootstrap. 
 Journal of the American Statistical Association , Vol. 97, no. 459, 
