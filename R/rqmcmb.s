@@ -27,7 +27,7 @@ else {
 else { 
 
   if ( n <= 5000) {fit<-rq.fit(x,y, tau=tau, ci=FALSE)} else {
-    if ( n <=50000) {fit<-rq.fit.fn(x,y, tau=tau) } else {
+    if ( n <=50000) {fit<-rq.fit.fnb(x,y, tau=tau) } else {
       fit<-rq.fit.pfn(x,y, tau=tau) } }
 
 

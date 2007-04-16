@@ -26,8 +26,8 @@
 #define IR 2836
 #define MASK 123459876
 
-float ran0(long *idum){
-  long k;
+float ran0(int *idum){
+  int k;
   float ans;
   
   *idum ^= MASK;
@@ -47,16 +47,16 @@ int allZero;
 /*  Various Utilities off the Web (for use with sort2())        */ 
 /****************************************************************/
 
-unsigned long *lvector(long nl, long nh)
-/* allocate a long int vector with subscript range v[nl..nh] */
+unsigned int *lvector(int nl, int nh)
+/* allocate a int int vector with subscript range v[nl..nh] */
 {
-    unsigned long *v = (unsigned long *)malloc((size_t)((nh-nl+2) * sizeof(long)));
+    unsigned int *v = (unsigned int *)malloc((size_t)((nh-nl+2) * sizeof(int)));
     if (v == NULL) error("allocation failure in lvector()");
     return (v-nl+1);
 }
 
-void free_lvector(unsigned long *v, long nl, long nh)
-/* free a long int vector allocated with lvector() */
+void free_lvector(unsigned int *v, int nl, int nh)
+/* free a int int vector allocated with lvector() */
 {
     free(v+nl-1);
 }
@@ -66,8 +66,8 @@ void free_lvector(unsigned long *v, long nl, long nh)
 /*  Sort Function                                               */ 
 /****************************************************************/
 
-void sort2(unsigned long n, double arr[], double brr[]){
-  unsigned long i,ir=n,j,k,l=1,*istack;
+void sort2(unsigned int n, double arr[], double brr[]){
+  unsigned int i,ir=n,j,k,l=1,*istack;
   int jstack=0;
   double a,b,temp;
   istack=lvector(1,NSTACK);
@@ -183,7 +183,7 @@ sum_right, double sumxij, double sumabsxij, int j, int pp, int nn){
 /*  double xj[nn+1], yj[nn+1], z[nn+1], wt[nn+1], wtsum;*/
   /*double  wt[nn+1];*/
   double *xj, *yj, *z, *wt, wtsum;
-  unsigned long mm;
+  unsigned int mm;
   double taustar, pwtsum, ans, large;
   
   xj=(double *) calloc(nn+1, sizeof(double));
@@ -257,7 +257,7 @@ sum_right, double sumxij, double sumabsxij, int j, int pp, int nn){
 
 
 void rqmcmb(double *x, double *y,  double *tau, double *theta_tilda, double *A, double *zstar, 
-	    double *sumxij, double *sumabsxij, long *n, long *p, int *success, double *theta, long *MAXK, long *seed){
+	    double *sumxij, double *sumabsxij, int *n, int *p, int *success, double *theta, int *MAXK, int *seed){
   
   int i, j, jj, k, nn, pp;
   double sum, s[MAXP],tau2, tTilda[MAXP];

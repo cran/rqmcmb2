@@ -41,8 +41,9 @@ rqmcmb.plot<-function(obj, alpha=.10){
   #theta <- obj$theta
   thetaOrig <- obj$theta[1,]
   z<-qnorm(alpha/2)
-  dev<-dev.cur()
-  if(dev==1) {motif()}
+  ## R will open a device as needed
+  # dev<-dev.cur()
+  # if(dev==1) {motif()}
   par(mfrow=plotDim(p)$dims)
   plotr <- apply(obj$theta,2,range)
   plotlim <- rbind(pmin(plotr[1,],lci), pmax(plotr[2,],uci))

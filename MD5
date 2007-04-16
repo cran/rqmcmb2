@@ -1,0 +1,11 @@
+abc9779ca10054a6328a2b2147bf7105 *DESCRIPTION
+9ef4ef6f882b79abb6ed00590ebcebb9 *INDEX
+ff677713e683cfe639262ed4640afdfc *NAMESPACE
+9a456cd4c9a58002e56381c19af39a03 *R/misc.s
+4f479d8d365156e82973058450e080f7 *R/rqmcmb.s
+a9b85a80e1c93d596e153c79f6240513 *man/plotDim.Rd
+6abf8ae5ca34f3a251096cc3351889e8 *man/rqmcmb.Rd
+4b5e5efe0cce0f90c08235e220922141 *man/rqmcmb.ci.Rd
+917c374642c1260dd2d60b20f8efa8c3 *man/rqmcmb.plot.Rd
+c249940d6e18a6a13d72a643a18f5cea *man/scoref.Rd
+adfa66de1666f2decb7cdfe2c8589dc3 *src/rqmcmbAll.c
